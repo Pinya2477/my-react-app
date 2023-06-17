@@ -51,7 +51,7 @@ function App() {
             {isPrime ? (
               <p>{number} เป็นจำนวนเฉพาะ</p>
             ) : (
-              <p>{number} ไม่เป็นจำนวนนับเฉพาะ</p>
+              <p>{number} ไม่เป็นจำนวนเฉพาะ</p>
                  )}
         <div>
     </div>
