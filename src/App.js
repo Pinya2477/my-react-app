@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import MyHeader from './MyHeader';
+import MyFooter from './MyFooter';
+
+
 
 function App() {
+  setInterval(UpdateTime, 1000);
+  let now = new Date().toLocaleTimeString('th-TH');
+  const [time, setTime] = useState(now);
+  const [num, setNum] = useState(0);
+  
+
+
+  function UpdateTime(){
+    let newTime = new Date().toLocaleTimeString('th-TH');
+    setTime(newTime);
+
+  }
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <MyHeader />
+      <div className='My-content'>
+        <div>ขณะนี้เวลา</div>
+        <div>{time}</div>
+        <h2>{num}</h2>
+        <button onClick={()=>setNum(num+1)}>เพิ่ม</button>
+        <button onClick={()=>setNum(num-1)}>ลด</button>
+        <div>
+      
+      
     </div>
+      </div>
+    <MyFooter/> 
+    </div>
+    
   );
 }
 
